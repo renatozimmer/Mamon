@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        label {
+            font-size: medium;
+        }
+
+        #valor_total {
+            font-size: x-large;
+        }
+    </style>
+    <title>Mamon</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row center">
+
+
+            <div class="col s12">
+                <h3>Sistema Mamon</h3>
+                <h4>Irá calcular o valor correto da gorjeta de seus colaboradores :D </h4>
+            </div>
+            <div class="col s12" id="funcionario">
+                <form action="#">
+                    <div class="col s6">
+                        <label for="" class="col s6">Informe quantidade de funcionarios</label>
+                        <input type="text" class="col s6" id="qt_funcionario">
+                    </div>
+                    <div class="col s6">
+                        <label for="" class="col s6">Informe valor total de gorjetas</label>
+                        <input type="text" class="col s6" id="valor_gorjeta">
+                    </div>
+
+                    <a class="waves-effect waves-light btn-small" onclick="calcularGorjeta()"><i
+                            class="material-icons left">monetization_on</i>Calcular</a>
+                </form>
+                <div class="col s12">
+                    <label id="valor_total" style="visibility: hidden;"></label>
+                </div>
+            </div>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+<script>
+
+    function calcularGorjeta() {
+        let qtFuncionario = document.querySelector('#qt_funcionario').value;
+        let valorGorjeta = document.querySelector('#valor_gorjeta').value;
+        let valorTotal = valorGorjeta / qtFuncionario;
+        //console.log("Total de Funcionarios: " + qtFuncionario);
+        //console.log("Valor Total Gorjeta: " + valorGorjeta);
+        //console.log("Total de gorjeta para cada funcionario é: " + valorGorjeta / qtFuncionario);
+        document.getElementById("valor_total").innerHTML = "O valor de  cada colaborador é: " + valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        document.getElementById("valor_total").style.visibility = "visible";
+    }
+</script>
+
+</html>
