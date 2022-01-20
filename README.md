@@ -1,7 +1,7 @@
 # Mamon
 Sistema para calcular valor total de gorjetas para cada funcionarios
 
-## Sistema desenvolvido para uso didadico.
+## Sistema desenvolvido para uso didatico.
 
 Desenvolvido sistema simples para divisão de gorjetas por funcionarios, como inputs total de colaboradores e Valor total de gorjetas.
 
